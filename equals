@@ -1,0 +1,27 @@
+public boolean equals(Stack<Integer> s1, Stack<Integer> s2) {
+    int counter = 0;
+     ArrayList<Integer> list = new ArrayList<Integer>();
+    ArrayList<Integer> list2 = new ArrayList<Integer>();
+      while (!s1.isEmpty())
+      {
+          list.add(s1.pop());
+      }
+    while (!s2.isEmpty())
+    {
+        list2.add(s2.pop());
+    }
+    //add stack back
+    for (int i = list.size()-1; i >= 0; i--)
+    {
+        s1.push(list.get(i));
+    }
+    for (int i = list2.size()-1; i>= 0; i--)
+        s2.push(list2.get(i));
+    //compare
+    if (list.size()!=list2.size())
+        return false;
+    return (list.equals(list2));
+    
+    
+	
+}
