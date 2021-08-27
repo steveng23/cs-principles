@@ -1,0 +1,25 @@
+public Stack splitStack(Stack<Integer> s) {
+   
+    Stack<Integer> neg = new Stack<Integer>();
+     Stack<Integer> pos = new Stack<Integer>();
+    while(!s.isEmpty())
+    {
+        
+        if(s.peek()<0)
+            neg.push(s.pop());
+        else 
+            pos.push(s.pop());
+        
+            
+        
+    }
+	while (!neg.isEmpty())
+        s.push(neg.pop());
+    while (!pos.isEmpty())
+    {
+        s.push(pos.pop());
+    }
+
+    //System.out.print(neg);
+    return s;
+}
