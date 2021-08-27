@@ -1,0 +1,15 @@
+public void stutter(Stack<Integer> s) {
+    Stack<Integer> copy = new Stack<Integer>();
+    ArrayList<Integer> list = new ArrayList<Integer>();
+      while (!s.isEmpty())
+      {
+          list.add(s.pop());
+      }
+    for (int i = list.size()-1; i >= 0; i--)
+    {
+        s.push(list.get(i));
+        s.push(list.get(i));
+    }
+        
+	
+}
