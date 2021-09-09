@@ -1,1 +1,31 @@
-Filler
+public boolean isConsecutive(Stack<Integer> s) {
+    Stack<Integer> copy = new Stack<Integer>();
+    if (s.size()<2)
+        return true;
+    
+    while (s.size()>0)
+    {
+        copy.push(s.peek());
+        int a = s.pop();
+        
+        if (!s.isEmpty() && s.peek()!=(a-1))
+        {
+            while (copy.size()>0)
+    {
+        s.push(copy.peek());
+        copy.pop();
+    }
+            return false;
+    }
+    }
+    while (copy.size()>0)
+    {
+        s.push(copy.peek());
+        copy.pop();
+    }
+    return true;
+   
+    
+    
+	
+}
